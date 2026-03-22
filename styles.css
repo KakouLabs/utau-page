@@ -51,6 +51,9 @@ body {
   color: var(--text-main);
   font-family: "IBM Plex Sans KR", -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
+  transition:
+    background 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.45s ease;
 }
 
 body.lang-ja {
@@ -76,7 +79,7 @@ body::before {
   z-index: 0;
 }
 
-/* 간장게장 비 내리는 캔버스 */
+/* 배경 오브젝트(게/유령) 비 내리는 캔버스 */
 #crab-canvas {
   position: fixed;
   inset: 0;
@@ -90,6 +93,7 @@ body::before {
 a {
   color: inherit;
   text-decoration: none;
+  transition: color 0.35s ease, text-decoration-color 0.35s ease;
 }
 
 img {
@@ -106,19 +110,33 @@ img {
 }
 
 /* --- 언어 전환 스위치 (Language Switcher) --- */
-.lang-switcher {
+.top-switchers {
   position: fixed;
   top: 24px;
   right: 24px;
   z-index: 900;
   display: flex;
-  gap: 4px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.lang-switcher,
+.character-switcher {
   background: rgba(255, 255, 255, 0.4);
   padding: 4px;
   border: 1px solid var(--border-strong);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   box-shadow: inset 1px 1px 0px var(--border-highlight), 2px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+.lang-switcher,
+.character-switcher,
+.character-switcher {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
 }
 
 .lang-btn {
@@ -130,7 +148,11 @@ img {
   color: var(--text-muted);
   padding: 8px 12px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.2s ease;
 }
 
 .lang-btn:hover {
@@ -144,6 +166,40 @@ img {
   box-shadow: inset 1px 1px 0px rgba(255,255,255,0.3);
 }
 
+.character-tab {
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid var(--border-strong);
+  min-height: 40px;
+  padding: 8px 14px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--text-main);
+  cursor: pointer;
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.2s ease;
+}
+
+.character-switcher .character-tab {
+  min-width: 120px;
+}
+
+.character-tab:hover {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: var(--theme-complement);
+}
+
+.character-tab.active {
+  color: #fff;
+  background: var(--theme-main);
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: inset 1px 1px 0px rgba(255,255,255,0.22);
+}
+
 /* --- 각진 글래스모피즘(딱딱한 우무묵) 패널 공통 --- */
 .glass-panel {
   background: var(--glass-bg);
@@ -155,6 +211,11 @@ img {
   box-shadow: inset 1px 1px 0px var(--border-highlight), var(--glass-shadow);
   /* Tilt 요소 내부 컨텐츠 정렬 유지 및 깜빡임 방지 */
   transform-style: preserve-3d;
+  transition:
+    background 0.5s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease,
+    color 0.35s ease;
 }
 
 /* --- Typography --- */
@@ -169,6 +230,7 @@ img {
   color: var(--theme-main); /* 메인 컬러로 포인트 */
   font-size: 0.75rem;
   font-weight: 700;
+  transition: color 0.35s ease;
 }
 
 h1, h2, h3, p, dd, dt, li {
@@ -194,11 +256,13 @@ h1 {
 h2 {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: var(--text-main);
+  transition: color 0.35s ease;
 }
 
 h3 {
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   color: var(--text-main);
+  transition: color 0.35s ease;
 }
 
 /* --- Hero Section --- */
@@ -258,10 +322,15 @@ dd,
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 0.02em;
-  transition: all 0.2s ease-out;
   cursor: pointer;
   border: 1px solid transparent;
   text-align: center;
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.2s ease-out;
 }
 
 /* Primary Button: 보색(올리브 그린) 적용 */
@@ -322,6 +391,11 @@ dd,
   border-radius: var(--radius-none);
   border: 1px solid var(--border-strong);
   box-shadow: inset 1px 1px 0px var(--border-highlight);
+  transition:
+    background 0.45s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    color 0.35s ease;
 }
 
 .status-value {
@@ -330,6 +404,7 @@ dd,
   line-height: 1.1;
   color: var(--text-main);
   overflow-wrap: anywhere;
+  transition: color 0.35s ease;
 }
 
 .status-primary-link {
@@ -380,6 +455,7 @@ dd,
   margin-bottom: 32px;
   padding-left: 8px;
   border-left: 4px solid var(--theme-complement); /* 단단한 인디케이터 선을 올리브 그린으로 강조 */
+  transition: border-color 0.35s ease;
 }
 
 .section-heading .download-description {
@@ -442,26 +518,107 @@ dd,
 @media (min-width: 769px) {
   .main-card {
     flex-direction: row;
-    align-items: stretch;
+    align-items: flex-start; /* 텍스트가 길어져도 이미지가 억지로 늘어나지 않음 */
   }
 }
 
 .portrait-frame {
-  flex: 0 0 280px;
+  flex: 0 0 320px; /* 이미지 너비를 적당히 고정 */
   height: auto;
-  min-height: 380px;
   border-radius: var(--radius-none);
-  background: transparent;
+  background: rgba(0, 0, 0, 0.03); /* 아주 연한 배경색으로 공간 채움 */
   border: 0;
   overflow: hidden;
   position: relative;
   box-shadow: none;
+  display: block;
+}
+
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.96);
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.portrait-frame::before {
+  content: "";
+  position: absolute;
+  inset: -2% -8%;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.82) 35%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.88) 68%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.12));
+  border-left: 1px solid rgba(255, 255, 255, 0.9);
+  border-right: 1px solid rgba(255, 255, 255, 0.7);
+  transform: translateX(-130%) skewX(-18deg);
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.portrait-frame.is-wiping::after {
+  animation: portrait-wipe 0.42s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.portrait-frame.is-wiping::before {
+  animation: portrait-panel-sweep 0.48s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+@keyframes portrait-wipe {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left center;
+    opacity: 0;
+  }
+  18% {
+    transform: scaleX(0.22);
+    transform-origin: left center;
+    opacity: 1;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left center;
+    opacity: 1;
+  }
+  51% {
+    transform: scaleX(1);
+    transform-origin: right center;
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right center;
+    opacity: 0;
+  }
+}
+
+@keyframes portrait-panel-sweep {
+  0% {
+    transform: translateX(-130%) skewX(-18deg);
+    opacity: 0;
+  }
+  18% {
+    opacity: 1;
+  }
+  52% {
+    transform: translateX(0%) skewX(-18deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(130%) skewX(-18deg);
+    opacity: 0;
+  }
 }
 
 .portrait-frame img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto; /* 비율 유지 */
+  display: block;
+  object-fit: contain;
   transition: transform 0.5s ease;
 }
 
@@ -508,6 +665,11 @@ dd,
   box-shadow: inset 1px 1px 0px var(--border-highlight);
   text-align: center;
   overflow-wrap: anywhere;
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .profile-summary {
@@ -515,6 +677,7 @@ dd,
   color: var(--text-muted);
   font-style: italic;
   font-size: 1.1rem;
+  transition: color 0.35s ease;
 }
 
 .tag-row {
@@ -533,6 +696,11 @@ dd,
   color: var(--text-main);
   backdrop-filter: blur(4px);
   box-shadow: inset 1px 1px 0px var(--border-highlight);
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .profile-grid {
@@ -557,7 +725,12 @@ dd,
   border-radius: var(--radius-none);
   background: rgba(255, 255, 255, 0.4);
   border: 1px solid var(--border-strong);
-  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition:
+    background 0.35s ease,
+    transform 0.2s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease;
   box-shadow: inset 1px 1px 0px var(--border-highlight);
   display: flex;
   flex-direction: column;
@@ -587,6 +760,7 @@ dd {
   font-weight: 500;
   color: var(--text-main);
   font-size: 0.95rem;
+  transition: color 0.35s ease;
 }
 
 /* --- Credit & Download Section --- */
@@ -615,7 +789,12 @@ dd {
   border-radius: var(--radius-none);
   background: rgba(255, 255, 255, 0.3);
   border: 1px solid var(--border-strong);
-  transition: all 0.2s ease;
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.2s ease;
   box-shadow: inset 1px 1px 0px var(--border-highlight);
   display: flex;
   align-items: center;
@@ -676,6 +855,7 @@ dd {
   color: var(--theme-complement);
   font-weight: 700;
   opacity: 0.8;
+  transition: color 0.35s ease;
 }
 
 .contributor-name {
@@ -683,6 +863,7 @@ dd {
   font-weight: 700;
   color: var(--text-main);
   font-size: 1.05rem;
+  transition: color 0.35s ease;
 }
 
 .download-card h3 {
@@ -737,6 +918,11 @@ dd {
 .download-description {
   color: var(--text-muted);
   font-size: 0.95rem;
+  transition:
+    color 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .download-description {
@@ -779,12 +965,18 @@ dd {
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
+  transition:
+    background 0.45s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .footer-meta {
   margin: 0;
   color: var(--text-muted);
   font-size: 0.88rem;
+  transition: color 0.35s ease;
 }
 
 .footer-nav {
@@ -800,6 +992,7 @@ dd {
   text-decoration: underline;
   text-decoration-color: rgba(122, 92, 72, 0.35);
   text-underline-offset: 3px;
+  transition: color 0.35s ease, text-decoration-color 0.35s ease;
 }
 
 .footer-nav a:hover {
@@ -917,7 +1110,7 @@ dd {
     flex-direction: column;
   }
 
-  .lang-switcher {
+  .top-switchers {
     top: 12px;
     right: 12px;
   }
