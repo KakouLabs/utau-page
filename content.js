@@ -382,15 +382,15 @@ window.siteContent = {
       "dossierLabel": "詳細情報",
       "downloadSection": "クレジット＆ダウンロード",
       "creditToggleOpen": "クレジットを表示",
-      "creditToggleClose": "クレジット를 閉じる",
+      "creditToggleClose": "クレジットを閉じる",
       "creditLabel": "貢献者",
       "driveLabel": "Google Drive",
       "notesLabel": "利用規約",
       "characterSwitchLabel": "キャラクター",
       "contactLabel": "Contact",
       "footerAboutLabel": "About",
-      "defaultCharacterLabel": "Character 1",
-      "placeholderCharacterLabel": "Character 2"
+      "defaultCharacterLabel": "キャラクター 1",
+      "placeholderCharacterLabel": "キャラクター 2"
     },
     "contact": {
       "sectionLabel": "CONTACT",
@@ -419,15 +419,15 @@ window.siteContent = {
         "hero": {
           "label": "単独音源配布",
           "name": "Tetsu Kokuno",
-          "tagline": "軽く明るい女性적인 목소리 톤의 UTAU VCV 음원",
-          "intro": "虚空の鉄는 軽く澄んだ女性寄りの声色をベースにしたUTAU VCV音源입니다. 音のつなが리가 자연스럽고 발성이 부드럽게 이어져, 귀엽고 경쾌한 곡부터 밝은 팝 스타일 커버까지 안정적으로 사용할 수 있도록 구성했습니다.",
-          "facts": ["147cm / 98kg", "カンジャンケジャン好き", "Google Drive 다운로드"],
-          "buttonProfile": "프로필 보기",
-          "buttonDownload": "다운로드로 이동"
+          "tagline": "軽く明るい女性的な声質のUTAU VCV音源",
+          "intro": "虚空の 鉄は、軽く澄んだ女性寄りの声色をベースにしたUTAU VCV音源です。音のつながりが自然でやわらかく、かわいい雰囲気の曲や明るいポップ系カバーまで安定して使用できるように設計しています。",
+          "facts": ["147cm / 98kg", "カンジャンケジャン好き", "Google Drive ダウンロード"],
+          "buttonProfile": "プロフィールを見る",
+          "buttonDownload": "ダウンロードへ"
         },
         "profile": {
           "status": "配布中",
-          "name": "虚空의 鉄",
+          "name": "虚空の 鉄",
           "type": "VCV音源",
           "summary": "「俺の声は錆びない」",
           "tags": [],
@@ -437,7 +437,7 @@ window.siteContent = {
             { "label": "名前", "value": "虚空の 鉄" },
             { "label": "年齢", "value": "5000歳" },
             { "label": "身長 / 体重", "value": "147cm / 98kg" },
-            { "label": "誕生日", "value": "5월 29일" }
+            { "label": "誕生日", "value": "5月29日" }
           ],
           "dossier": [
             { "label": "種族", "value": "象" },
@@ -445,13 +445,13 @@ window.siteContent = {
             { "label": "好きなもの", "value": "カンジャンケジャン" },
             { "label": "嫌いなもの", "value": "酸素" },
             { "label": "得意なこと", "value": "裏声を出すこと" },
-            { "label": "苦手なこと", "value": "九九를 覚えること" },
-            { "label": "好きなおかず", "value": "シ다의 하브" }
+            { "label": "苦手なこと", "value": "九九を覚えること" },
+            { "label": "好きなおかず", "value": "シダのハーブ" }
           ]
         },
         "credit": {
           "title": "制作・クレジット",
-          "description": "虚空の鉄의 캐릭터 설정과 음성 라이브러리 제작에 참여해주신 분들입니다.",
+          "description": "虚空の 鉄のキャラクター設定と音声ライ브러리制作に参加していただいた方々です。",
           "contributors": [
             { "role": "VA, 名前", "name": "SapoKR", "link": "https://x.com/Developer_Sapo" },
             { "role": "年齢", "name": "Sukje", "link": "  " },
@@ -468,12 +468,12 @@ window.siteContent = {
             "url": "https://drive.google.com/file/d/19RI3QHarB7r3nJvQiaf9S4J1yoTNgJxh/view?usp=sharing"
           },
           "secondaryAction": {
-            "label": "MediaFire에서 다운로드",
+            "label": "MediaFireからダウンロード",
             "url": "https://www.mediafire.com/file/1lxvqm5gtk8iiu2/Glit.zip/file"
           },
           "notes": [
-            "二次創作や商用利用に関する規定は、同梱의 readme.txt를 참고해주세요.",
-            "音源使用 시 '虚空의 鉄' 혹은 관련 크레딧을 표기해주시면 감사하겠습니다."
+            "二次創作や商用利用に関する規定は、同梱のreadme.txtをご確認ください。",
+            "音源を使用する際は「虚空の 鉄」または関連クレジットを表記していただけると幸いです。"
           ]
         },
         "footer": {
@@ -481,8 +481,8 @@ window.siteContent = {
           "links": [
             { "label": "Contact", "url": "https://x.com/KokunoTetsu" },
             { "label": "About", "url": "#profile" },
-            { "label": "Credits", "url": "#credit" },
-            { "label": "Download", "url": "#credit" }
+            { "label": "クレジット", "url": "#credit" },
+            { "label": "ダウンロード", "url": "#credit" }
           ]
         }
       },
@@ -502,11 +502,11 @@ window.siteContent = {
         "hero": {
           "label": "VCV音源配布",
           "name": "Glit",
-          "tagline": "데이터의 세계를 유영하는 유령 슬라임",
-          "intro": "글릿은 디지털 세계의罅隙을 타고 흐르는 데이터 고스트 슬라임입니다. 항상 여유롭고 세련된 위선을 유지하지만, 실은 세련된 예술적 파괴를 향한 날카로운 감각을 가진 성숙한 장난꾸러기예요.",
-          "facts": ["種族: 데이터 고스트 슬라임", "年齢: 不明", "9cm / 188g"],
-          "buttonProfile": "프로필 보기",
-          "buttonDownload": "다운로드로 이동"
+          "tagline": "データの世界を泳ぐゴーストスライム",
+          "intro": "グリットはデジタル世界の隙間를 縫って流れるデータゴーストス라이ム입니다. 常に余裕があり洗練されていますが、実は芸術的な破壊への鋭い感性を持つ成熟したいたずらっ子です。",
+          "facts": ["種族: データゴーストスライム", "年齢: 不明", "9cm / 188g"],
+          "buttonProfile": "プロフィールを見る",
+          "buttonDownload": "ダウンロードへ"
         },
         "profile": {
           "status": "配布予定",
@@ -520,18 +520,18 @@ window.siteContent = {
             { "label": "名前", "value": "グリット (Glit)" },
             { "label": "年齢", "value": "不明" },
             { "label": "身長 / 体重", "value": "9cm / 188g" },
-            { "label": "誕生日", "value": "5월 10일" }
+            { "label": "誕生日", "value": "5月10日" }
           ],
           "dossier": [
-            { "label": "種族", "value": "데이터 고스트 슬라임" },
-            { "label": "好きな食べ物", "value": "마라룽샤" },
-            { "label": "嫌いな食べ物", "value": "토마토" },
-            { "label": "好きな国", "value": "Canada" },
+            { "label": "種族", "value": "データゴーストスライム" },
+            { "label": "好きな食べ物", "value": "マーラーロンシャ" },
+            { "label": "嫌いな食べ物", "value": "トマト" },
+            { "label": "好きな国", "value": "カナダ" },
             { "label": "好きなもの", "value": "本人" },
-            { "label": "嫌いなもの", "value": "질소" },
-            { "label": "得意なこと", "value": "노래 감상" },
-            { "label": "好きな和え物", "value": "꽈리고추 감자조림" },
-            { "label": "嫌いな和え物", "value": "가지무침" }
+            { "label": "嫌いなもの", "value": "窒素" },
+            { "label": "得意なこと", "value": "音楽鑑賞" },
+            { "label": "好きな和え物", "value": "獅子唐辛子とジャガイモの煮物" },
+            { "label": "嫌いな和え物", "value": "ナスの和え物" }
           ]
         },
         "credit": {
@@ -544,12 +544,12 @@ window.siteContent = {
             "url": "https://drive.google.com/file/d/19RI3QHarB7r3nJvQiaf9S4J1yoTNgJxh/view?usp=sharing"
           },
           "secondaryAction": {
-            "label": "MediaFire에서 다운로드",
+            "label": "MediaFireからダウンロード",
             "url": "https://www.mediafire.com/file/1lxvqm5gtk8iiu2/Glit.zip/file"
           },
           "notes": [
-            "二次創作や商用利用に関する規定는 동봉된 readme.txt를 참고해주세요.",
-            "音源使用 시 'グリット(Glit)' 혹은 관련 크레딧을 표기해주시면 감사하겠습니다."
+            "二次創作や商用利用に関する規定は、同梱のreadme.txtをご確認ください。",
+            "音源を使用する際は「グリット(Glit)」または関連クレジットを表記していただけると幸いです。"
           ]
         },
         "footer": {
@@ -557,7 +557,7 @@ window.siteContent = {
           "links": [
             { "label": "Contact", "url": "https://x.com/KokunoTetsu" },
             { "label": "About", "url": "#profile" },
-            { "label": "Download", "url": "#credit" }
+            { "label": "ダウンロード", "url": "#credit" }
           ]
         }
       }
