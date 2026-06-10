@@ -3,6 +3,17 @@ let currentCharacterId = "tetsu-kokuno";
 let isCreditOpen = false;
 let characterTransitionTimer = null;
 
+(function initCharacterFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const charParam = params.get('c');
+  const validIds = ['tetsu-kokuno', 'glit'];
+  if (charParam && validIds.includes(charParam)) {
+    currentCharacterId = charParam;
+  }
+})();
+
+const isGoogleBot = /googlebot/i.test(navigator.userAgent);
+
 const scrambleCharacters = "01アイウエオ카키쿠케코サシスセソ타치ツテトナニヌ네노ABCDEFGHIJKLMNOPQRSTUVWXYZ#@$%&*+=-_";
 
 function setImmediateText(id, value) {
@@ -37,6 +48,11 @@ const setText = (id, value) => {
 };
 
 function scrambleText(id, finalText, duration = 520) {
+  if (isGoogleBot) {
+    setImmediateText(id, finalText);
+    return;
+  }
+
   const node = document.getElementById(id);
   if (!node) return;
 
@@ -78,6 +94,11 @@ function scrambleText(id, finalText, duration = 520) {
 }
 
 function scrambleHeroName(finalText) {
+  if (isGoogleBot) {
+    setImmediateText("hero-name", finalText);
+    return;
+  }
+
   const node = document.getElementById("hero-name");
   if (!node) return;
 
@@ -249,6 +270,10 @@ function animateCharacterSwap(nextCharacterId) {
     currentCharacterId = nextCharacterId;
     renderContent();
 
+    const url = new URL(window.location);
+    url.searchParams.set('c', nextCharacterId);
+    history.replaceState({ characterId: nextCharacterId }, '', url);
+
     characterTransitionTimer = null;
   }, 190);
 }
@@ -321,6 +346,10 @@ function renderContent() {
   document.documentElement.lang = currentLang;
   document.body.classList.remove("lang-ko", "lang-en", "lang-ja");
   document.body.classList.add(`lang-${currentLang}`);
+
+  const characterTitleName = hero.name || activeCharacter.profile?.name || "UTAU";
+  const titleSuffix = currentLang === "ko" ? "UTAU 보이스뱅크" : currentLang === "ja" ? "UTAU音源" : "UTAU Voicebank";
+  document.title = `${characterTitleName} — ${titleSuffix}`;
 
   renderCharacterTabs(content, activeCharacter);
   applyCharacterTheme(activeCharacter.theme || {});

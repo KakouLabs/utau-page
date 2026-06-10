@@ -111,7 +111,7 @@ window.siteContent = {
         }
       },
       {
-        "id": "character-2",
+        "id": "glit",
         "navLabel": "글릿",
         "theme": {
           "main": "#0B3A69",
@@ -299,7 +299,7 @@ window.siteContent = {
         }
       },
       {
-        "id": "character-2",
+        "id": "glit",
         "navLabel": "Glit",
         "theme": {
           "main": "#0B3A69",
@@ -487,7 +487,7 @@ window.siteContent = {
         }
       },
       {
-        "id": "character-2",
+        "id": "glit",
         "navLabel": "グリット",
         "theme": {
           "main": "#0B3A69",

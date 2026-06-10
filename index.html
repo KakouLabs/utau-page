@@ -4,12 +4,61 @@
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon"> 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tetsu Kokuno UTAU</title>
+    <title>Tetsu Kokuno &amp; Glit — UTAU Voicebank</title>
     <meta
       name="description"
-      content="Tetsu Kokuno UTAU Main"
+      content="Tetsu Kokuno and Glit UTAU VCV voicebank distribution. Light female vocal and data-ghost slime voicebanks available for download."
     />
-    <meta name="keywords" content="UTAU, 코쿠노 테츠, Kokuno Tetsu, 虚空の 鉄">
+    <meta name="keywords" content="UTAU, 코쿠노 테츠, Kokuno Tetsu, 虚空の 鉄, Glit, 글릿, グリット">
+    <meta property="og:title" content="Tetsu Kokuno &amp; Glit — UTAU Voicebank">
+    <meta property="og:description" content="Tetsu Kokuno and Glit UTAU VCV voicebank distribution. Light female vocal and data-ghost slime voicebanks available for download.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://utau.sapo.dev">
+    <meta property="og:image" content="https://utau.sapo.dev/assets/Tetsu.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tetsu Kokuno &amp; Glit — UTAU Voicebank">
+    <meta name="twitter:description" content="Tetsu Kokuno and Glit UTAU VCV voicebank distribution.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Musician",
+          "name": "Tetsu Kokuno",
+          "alternateName": ["코쿠노 테츠", "虚空の 鉄"],
+          "description": "A light, bright female-style UTAU VCV voicebank character. Elephant-themed with a warm orange aesthetic.",
+          "url": "https://utau.sapo.dev",
+          "image": "https://utau.sapo.dev/assets/Tetsu.png",
+          "sameAs": ["https://x.com/KokunoTetsu"],
+          "genre": "UTAU / Vocal Synthesizer",
+          "album": [
+            {
+              "@type": "MusicAlbum",
+              "name": "Tetsu Kokuno JA VCV",
+              "genre": "UTAU Voicebank"
+            }
+          ]
+        },
+        {
+          "@type": "Musician",
+          "name": "Glit",
+          "alternateName": ["글릿", "グリット"],
+          "description": "A data-ghost slime UTAU VCV voicebank character. A mature trickster with a sharp artistic sensibility.",
+          "url": "https://utau.sapo.dev",
+          "image": "https://utau.sapo.dev/assets/Glit.png",
+          "sameAs": ["https://x.com/KokunoTetsu"],
+          "genre": "UTAU / Vocal Synthesizer",
+          "album": [
+            {
+              "@type": "MusicAlbum",
+              "name": "Glit VCV",
+              "genre": "UTAU Voicebank"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link
@@ -227,6 +276,14 @@
     <script>
       // 1. 초기 부팅 씬 연출 (인터페이스 로딩 느낌)
       document.addEventListener("DOMContentLoaded", () => {
+        // 구글봇은 부트 애니메이션 스킵
+        if (/googlebot/i.test(navigator.userAgent)) {
+          const bootScreen = document.getElementById("boot-screen");
+          if (bootScreen) bootScreen.style.display = "none";
+          document.body.classList.add("boot-complete");
+          return;
+        }
+
         const bootScreen = document.getElementById("boot-screen");
         const bootText = document.getElementById("boot-text");
         
@@ -235,7 +292,6 @@
         
         setTimeout(() => {
           bootScreen.classList.add("fade-out");
-          // 부팅 화면이 꺼질 때 UI가 밑에서부터 부드럽게 떠오르는 트리거
           document.body.classList.add("boot-complete");
         }, 1200);
       });
