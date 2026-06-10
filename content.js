@@ -1,8 +1,12 @@
 window.siteContent = {
   "ko": {
-    "ui": {
+      "ui": {
       "statusLabel": "현재 상태",
       "profileSection": "메인 프로필",
+      "demoSection": "데모 & 커버",
+      "demoEyebrow": "DEMO",
+      "coversHeading": "커버곡",
+      "originalsHeading": "오리지널 곡",
       "dossierLabel": "상세 정보",
       "downloadSection": "제작 및 배포",
       "creditToggleOpen": "크레딧 펼치기",
@@ -71,6 +75,14 @@ window.siteContent = {
             { "label": "잘하는 일", "value": "삑사리 내기" },
             { "label": "서투른 일", "value": "구구단 외우기" },
             { "label": "좋아하는 반찬", "value": "고사리나물" }
+          ],
+          "covers": [
+            { "title": "메즈마라이저 (Mesmerizer)", "youtubeId": "-DGs-cun2yg", "description": "코쿠노 테츠 & 글릿 합동 커버" },
+            { "title": "검게 칠해진 세계 앞으로 보내는 편지", "youtubeId": "FnsGejrGkCI", "description": "코쿠노 테츠 단독 커버" },
+            { "title": "meme시이 (memeism)", "youtubeId": "CkuAaGQ2k4o", "description": "코쿠노 테츠 단독 커버" }
+          ],
+          "originals": [
+            { "title": "제2의 눈", "youtubeId": "XwWcZodZERw", "description": "코쿠노 테츠 피처링 오리지널 곡" }
           ]
         },
         "credit": {
@@ -156,7 +168,11 @@ window.siteContent = {
             { "label": "잘하는 일", "value": "노래 감상" },
             { "label": "좋아하는 반찬", "value": "꽈리고추 감자조림" },
             { "label": "싫어하는 반찬", "value": "가지무침" }
-          ]
+          ],
+          "covers": [
+            { "title": "메즈마라이저 (Mesmerizer)", "youtubeId": "-DGs-cun2yg", "description": "코쿠노 테츠 & 글릿 합동 커버" }
+          ],
+          "originals": []
         },
         "credit": {
           "title": "제작 및 배포",
@@ -188,9 +204,13 @@ window.siteContent = {
     ]
   },
   "en": {
-    "ui": {
+      "ui": {
       "statusLabel": "CURRENT STATUS",
       "profileSection": "PROFILE",
+      "demoSection": "DEMO & COVERS",
+      "demoEyebrow": "DEMO",
+      "coversHeading": "COVERS",
+      "originalsHeading": "ORIGINALS",
       "dossierLabel": "DOSSIER",
       "downloadSection": "CREDIT & DOWNLOAD",
       "creditToggleOpen": "Show Credits",
@@ -259,6 +279,14 @@ window.siteContent = {
             { "label": "Good At", "value": "Voice cracking" },
             { "label": "Bad At", "value": "Multiplication tables" },
             { "label": "Favorite side dish", value: "Bracken fern" }
+          ],
+          "covers": [
+            { "title": "Mesmerizer", "youtubeId": "-DGs-cun2yg", "description": "Tetsu Kokuno & Glit collaboration cover" },
+            { "title": "Letter to the Black World", "youtubeId": "FnsGejrGkCI", "description": "Tetsu Kokuno solo cover" },
+            { "title": "memeism", "youtubeId": "CkuAaGQ2k4o", "description": "Tetsu Kokuno solo cover" }
+          ],
+          "originals": [
+            { "title": "제2의 눈", "youtubeId": "XwWcZodZERw", "description": "Original song featuring Tetsu Kokuno" }
           ]
         },
         "credit": {
@@ -344,7 +372,11 @@ window.siteContent = {
             { "label": "Good At", "value": "Listening to music" },
             { "label": "Favorite Side Dish", "value": "Braised Potato with Shishito Pepper" },
             { "label": "Disliked Side Dish", "value": "Seasoned Eggplant" }
-          ]
+          ],
+          "covers": [
+            { "title": "Mesmerizer", "youtubeId": "-DGs-cun2yg", "description": "Tetsu Kokuno & Glit collaboration cover" }
+          ],
+          "originals": []
         },
         "credit": {
           "title": "Production & Distribution",
@@ -376,9 +408,13 @@ window.siteContent = {
     ]
   },
   "ja": {
-    "ui": {
+      "ui": {
       "statusLabel": "現在のステータス",
       "profileSection": "プロフィール",
+      "demoSection": "デモ＆カバー",
+      "demoEyebrow": "DEMO",
+      "coversHeading": "カバー曲",
+      "originalsHeading": "オリジナル曲",
       "dossierLabel": "詳細情報",
       "downloadSection": "クレジット＆ダウンロード",
       "creditToggleOpen": "クレジットを表示",
@@ -447,6 +483,14 @@ window.siteContent = {
             { "label": "得意なこと", "value": "裏声を出すこと" },
             { "label": "苦手なこと", "value": "九九を覚えること" },
             { "label": "好きなおかず", "value": "シダのハーブ" }
+          ],
+          "covers": [
+            { "title": "メズマライザー", "youtubeId": "-DGs-cun2yg", "description": "虚空の鉄 & グリット コラボカバー" },
+            { "title": "黒塗り世界宛て書簡", "youtubeId": "FnsGejrGkCI", "description": "虚空の鉄 ソロカバー" },
+            { "title": "memeしい", "youtubeId": "CkuAaGQ2k4o", "description": "虚空の鉄 ソロカバー" }
+          ],
+          "originals": [
+            { "title": "제2의 눈", "youtubeId": "XwWcZodZERw", "description": "虚空の鉄フィーチャリング オリジナル曲" }
           ]
         },
         "credit": {
@@ -532,7 +576,11 @@ window.siteContent = {
             { "label": "得意なこと", "value": "音楽鑑賞" },
             { "label": "好きな和え物", "value": "獅子唐辛子とジャガイモの煮物" },
             { "label": "嫌いな和え物", "value": "ナスの和え物" }
-          ]
+          ],
+          "covers": [
+            { "title": "メズマライザー", "youtubeId": "-DGs-cun2yg", "description": "虚空の鉄 & グリット コラボカバー" }
+          ],
+          "originals": []
         },
         "credit": {
           "title": "制作・配布",

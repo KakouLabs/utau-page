@@ -333,6 +333,96 @@ function updateCanvasAsset() {
   }
 }
 
+function renderDemoRow(items, scrollContainerId) {
+  const scrollContainer = document.getElementById(scrollContainerId);
+  if (!scrollContainer) return;
+
+  scrollContainer.innerHTML = "";
+
+  items.forEach(function (demo) {
+    const card = document.createElement("a");
+    card.className = "demo-card tilt-element";
+    card.href = "https://www.youtube.com/watch?v=" + (demo.youtubeId || "");
+    card.target = "_blank";
+    card.rel = "noreferrer";
+
+    const thumb = document.createElement("div");
+    thumb.className = "demo-card-thumb";
+
+    const img = document.createElement("img");
+    img.src = "https://img.youtube.com/vi/" + (demo.youtubeId || "") + "/mqdefault.jpg";
+    img.alt = demo.title || "";
+    img.loading = "lazy";
+
+    const playIcon = document.createElement("div");
+    playIcon.className = "demo-play-icon";
+
+    thumb.appendChild(img);
+    thumb.appendChild(playIcon);
+
+    const info = document.createElement("div");
+    info.className = "demo-card-info";
+
+    const title = document.createElement("p");
+    title.className = "demo-card-title";
+    title.textContent = demo.title || "";
+
+    info.appendChild(title);
+
+    if (demo.description) {
+      const desc = document.createElement("p");
+      desc.className = "demo-card-desc";
+      desc.textContent = demo.description;
+      info.appendChild(desc);
+    }
+
+    card.appendChild(thumb);
+    card.appendChild(info);
+    scrollContainer.appendChild(card);
+  });
+}
+
+function renderDemos(profile, content) {
+  const ui = content.ui || {};
+  const covers = profile.covers || [];
+  const originals = profile.originals || [];
+  const demoSection = document.getElementById("demo");
+
+  if (!demoSection) return;
+
+  if (covers.length === 0 && originals.length === 0) {
+    demoSection.style.display = "none";
+    return;
+  }
+
+  demoSection.style.display = "";
+  setImmediateText("ui-demo-eyebrow", ui.demoEyebrow);
+  scrambleText("ui-demo-heading", ui.demoSection, 420);
+
+  const coversSub = document.getElementById("demo-covers");
+  const originalsSub = document.getElementById("demo-originals");
+
+  if (coversSub) {
+    if (covers.length === 0) {
+      coversSub.style.display = "none";
+    } else {
+      coversSub.style.display = "";
+      setImmediateText("ui-covers-heading", ui.coversHeading);
+      renderDemoRow(covers, "covers-scroll");
+    }
+  }
+
+  if (originalsSub) {
+    if (originals.length === 0) {
+      originalsSub.style.display = "none";
+    } else {
+      originalsSub.style.display = "";
+      setImmediateText("ui-originals-heading", ui.originalsHeading);
+      renderDemoRow(originals, "originals-scroll");
+    }
+  }
+}
+
 function renderContent() {
   const content = getLocaleContent();
   const contact = content.contact || {};
@@ -563,6 +653,7 @@ function renderContent() {
   }
 
   updateCanvasAsset();
+  renderDemos(profile, content);
   refreshTilt();
 }
 
