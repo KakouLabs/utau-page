@@ -12,7 +12,7 @@ let characterTransitionTimer = null;
   }
 })();
 
-const isGoogleBot = /googlebot/i.test(navigator.userAgent);
+const isBot = /bot|crawler|spider/i.test(navigator.userAgent);
 
 const scrambleCharacters = "01アイウエオ카키쿠케코サシスセソ타치ツテトナニヌ네노ABCDEFGHIJKLMNOPQRSTUVWXYZ#@$%&*+=-_";
 
@@ -48,7 +48,7 @@ const setText = (id, value) => {
 };
 
 function scrambleText(id, finalText, duration = 520) {
-  if (isGoogleBot) {
+  if (isBot) {
     setImmediateText(id, finalText);
     return;
   }
@@ -94,7 +94,7 @@ function scrambleText(id, finalText, duration = 520) {
 }
 
 function scrambleHeroName(finalText) {
-  if (isGoogleBot) {
+  if (isBot) {
     setImmediateText("hero-name", finalText);
     return;
   }

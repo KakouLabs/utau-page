@@ -125,6 +125,21 @@
     </style>
   </head>
   <body>
+    <!-- JS를 실행하지 않는 bot/crawler를 위한 fallback 콘텐츠 -->
+    <noscript>
+      <div style="padding: 2rem; max-width: 720px; margin: 0 auto; font-family: sans-serif;">
+        <h1>Tetsu Kokuno &amp; Glit — UTAU Voicebank</h1>
+        <p>UTAU VCV voicebank distribution. Light female vocal and data-ghost slime voicebanks available for download.</p>
+        <ul>
+          <li><a href="?c=tetsu-kokuno">Tetsu Kokuno (코쿠노 테츠 / 虚空の 鉄)</a> — JA VCV voicebank</li>
+          <li><a href="?c=glit">Glit (글릿 / グリット)</a> — VCV voicebank</li>
+        </ul>
+        <p><a href="https://drive.google.com/file/d/15ICVCWsRLs4acea4R8QK-2Dfw0mtnY0j/view">Download from Google Drive</a></p>
+        <p><a href="/sitemap.xml">Sitemap</a></p>
+      </div>
+      <style>#boot-screen { display: none !important; }</style>
+    </noscript>
+
     <!-- 부팅 스크린 -->
     <div id="boot-screen">
       <div class="hud-marker hud-tl"></div>
@@ -294,7 +309,7 @@
       // 1. 초기 부팅 씬 연출 (인터페이스 로딩 느낌)
       document.addEventListener("DOMContentLoaded", () => {
         // 구글봇은 부트 애니메이션 스킵
-        if (/googlebot/i.test(navigator.userAgent)) {
+        if (/bot|crawler|spider/i.test(navigator.userAgent)) {
           const bootScreen = document.getElementById("boot-screen");
           if (bootScreen) bootScreen.style.display = "none";
           document.body.classList.add("boot-complete");
